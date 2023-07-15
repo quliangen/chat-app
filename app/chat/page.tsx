@@ -1,8 +1,10 @@
 'use client'
+
 import React, { useState, useEffect, useRef } from 'react';
-import { List, Input, Button } from 'antd-mobile';
-import { MessageBox, ChatList, ChatItem } from 'react-chat-elements';
-import 'react-chat-elements/dist/main.css';
+import { List } from 'antd-mobile';
+import 'antd-mobile/es/global';
+import PageWrap from '../../components/chat/PageWrap';
+import ChatItem from '../../components/chat/ChatItem';
 
 interface Message {
   id: number;
@@ -13,13 +15,6 @@ interface Message {
 const ChatPage: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputValue, setInputValue] = useState('');
-  const messageListRef = useRef<HTMLDivElement>(null);
-
-  const scrollToBottom = () => {
-    if (messageListRef.current) {
-      messageListRef.current.scrollTop = messageListRef.current.scrollHeight;
-    }
-  };
 
   const handleSendMessage = () => {
     if (inputValue.trim() !== '') {
@@ -34,45 +29,19 @@ const ChatPage: React.FC = () => {
     }
   };
 
-  useEffect(() => {
-    scrollToBottom();
-  }, [messages]);
-
   return (
-    <div style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-      <div
-        ref={messageListRef}
-        style={{ flex: 1, overflowY: 'auto', padding: '10px' }}
-      >
-        <ChatList
-          className="chat-list"
-          dataSource={messages.map((message) => ({
-            position: message.isMine ? 'right' : 'left',
-            type: 'text',
-            text: message.content,
-            date: new Date(),
-          }))}
-        />
-        <ChatItem
-          avatar="https://avatars.githubusercontent.com/u/80540635?v=4"
-          alt="kursat_avatar"
-          title="Kursat"
-          subtitle="Ok. See you !"
-          date={new Date()}
-          unread={0}
-        />;
+    <PageWrap>
+      <div className='flex-1 overflow-hidden'>
+        <div className='h-full overflow-y-auto'>
+          <ChatItem/>
+          <ChatItem type="1"/>
+          <ChatItem/>
+        </div>
       </div>
-      <div style={{ padding: '10px' }}>
-        <Input
-          value={inputValue}
-          onChange={(value) => setInputValue(value)}
-          placeholder="请输入消息"
-        />
-        <Button type="primary" onClick={handleSendMessage}>
-          发送
-        </Button>
+      <div className='absolute bottom-0 left-0 w-full border-t color-white pt-5'>
+        发送
       </div>
-    </div>
+    </PageWrap>
   );
 };
 

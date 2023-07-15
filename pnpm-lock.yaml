@@ -5,13 +5,13 @@ specifiers:
   '@types/react': 18.2.9
   '@types/react-dom': 18.2.4
   antd-mobile: ^5.31.1
+  antd-mobile-icons: ^0.3.0
   autoprefixer: 10.4.14
   eslint: 8.42.0
   eslint-config-next: 13.4.4
   next: 13.4.4
   postcss: 8.4.24
   react: 18.2.0
-  react-chat-elements: ^12.0.10
   react-dom: 18.2.0
   tailwindcss: 3.3.2
   typescript: 5.1.3
@@ -21,13 +21,13 @@ dependencies:
   '@types/react': 18.2.9
   '@types/react-dom': 18.2.4
   antd-mobile: 5.31.1_biqbaboplfbrettd7655fr4n2y
+  antd-mobile-icons: 0.3.0
   autoprefixer: 10.4.14_postcss@8.4.24
   eslint: 8.42.0
   eslint-config-next: 13.4.4_tizxnkcvjrb4cldxgwq5h3lj5u
   next: 13.4.4_biqbaboplfbrettd7655fr4n2y
   postcss: 8.4.24
   react: 18.2.0
-  react-chat-elements: 12.0.10_biqbaboplfbrettd7655fr4n2y
   react-dom: 18.2.0_react@18.2.0
   tailwindcss: 3.3.2
   typescript: 5.1.3
@@ -1872,10 +1872,6 @@ packages:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
     dev: false
 
-  /loaders.css/0.1.2:
-    resolution: {integrity: sha512-Rhowlq24ey1VOeor+3wYOt9+MjaxBOJm1u4KlQgNC3+0xJ0LS4wq4iG57D/BPzvuD/7HHDGQOWJ+81oR2EI9bQ==}
-    dev: false
-
   /locate-path/6.0.0:
     resolution: {integrity: sha512-iPZK6eYjbxRu3uB4/WZ3EsEIMJFMqAoopl3R+zuq0UjcAm/MO6KCweDgPfP3elTztoKP3KtnVHxTn2NHBSDVUw==}
     engines: {node: '>=10'}
@@ -2296,12 +2292,6 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: false
 
-  /progressbar.js/1.1.0:
-    resolution: {integrity: sha512-K68/xcyXKo2I6T3PfIkXrRaycxROmWeU4bugb49iulWR25cU94PM0cfZ47S0jDhG5K3vPhZwCOy1fgb5Pgh6UQ==}
-    dependencies:
-      shifty: 2.20.4
-    dev: false
-
   /prop-types/15.8.1:
     resolution: {integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==}
     dependencies:
@@ -2345,21 +2335,6 @@ packages:
       react-is: 16.13.1
     dev: false
 
-  /react-chat-elements/12.0.10_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-CF8n+UUM4+teP4xm1jFbAp9klbd5ZQoakFG6ZAghJo7ToGdG3R1UaMVa8LhLz28RC+AL63Xsg6ywFgu+TGetvQ==}
-    peerDependencies:
-      react: ^18.2.0
-      react-dom: 18.2.0
-    dependencies:
-      classnames: 2.3.2
-      progressbar.js: 1.1.0
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-      react-icons: 4.10.1_react@18.2.0
-      react-spinkit: 3.0.0
-      timeago.js: 4.0.2
-    dev: false
-
   /react-dom/18.2.0_react@18.2.0:
     resolution: {integrity: sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==}
     peerDependencies:
@@ -2370,29 +2345,12 @@ packages:
       scheduler: 0.23.0
     dev: false
 
-  /react-icons/4.10.1_react@18.2.0:
-    resolution: {integrity: sha512-/ngzDP/77tlCfqthiiGNZeYFACw85fUjZtLbedmJ5DTlNDIwETxhwBzdOJ21zj4iJdvc0J3y7yOsX3PpxAJzrw==}
-    peerDependencies:
-      react: '*'
-    dependencies:
-      react: 18.2.0
-    dev: false
-
   /react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
     dev: false
 
   /react-is/18.2.0:
     resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==}
-    dev: false
-
-  /react-spinkit/3.0.0:
-    resolution: {integrity: sha512-RrfGRPjqxHQiy7quPqhjPynTu0zobgQaZu1QYBMpJJ6pCSRRRK16EZMaxdE6fLVYFRJWpX/eGATWLMoVFFT5uQ==}
-    dependencies:
-      classnames: 2.3.2
-      loaders.css: 0.1.2
-      object-assign: 4.1.1
-      prop-types: 15.8.1
     dev: false
 
   /react/18.2.0:
@@ -2530,12 +2488,6 @@ packages:
   /shebang-regex/3.0.0:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
     engines: {node: '>=8'}
-    dev: false
-
-  /shifty/2.20.4:
-    resolution: {integrity: sha512-4Y0qRkg8ME5XN8yGNAwmFOmsIURGFKT9UQfNL6DDJQErYtN5HsjyoBuJn41ZQfTkuu2rIbRMn9qazjKsDpO2TA==}
-    optionalDependencies:
-      fsevents: 2.3.2
     dev: false
 
   /side-channel/1.0.4:
@@ -2746,10 +2698,6 @@ packages:
     resolution: {integrity: sha512-RVZSIV5IG10Hk3enotrhvz0T9em6cyHBLkH/YAZuKqd8hRkKhSfCGIcP2KUY0EPxndzANBmNllzWPwak+bheSw==}
     dependencies:
       any-promise: 1.3.0
-    dev: false
-
-  /timeago.js/4.0.2:
-    resolution: {integrity: sha512-a7wPxPdVlQL7lqvitHGGRsofhdwtkoSXPGATFuSOA2i1ZNQEPLrGnj68vOp2sOJTCFAQVXPeNMX/GctBaO9L2w==}
     dev: false
 
   /titleize/3.0.0:
