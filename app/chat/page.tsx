@@ -29,13 +29,24 @@ const ChatPage: React.FC = () => {
     }
   };
 
+  const [bg, setBg] = useState('');
+  const handleSetBg = (url: string) => {
+    setBg(url);
+  };
+
+  const divStyle = {
+    backgroundImage: `url(${bg})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat'
+  };
+
   return (
     <PageWrap>
-      <div className='flex-1 overflow-hidden'>
+      <div className='flex-1 overflow-hidden' style={divStyle}>
         <div className='h-full overflow-y-auto'>
           <ChatItem/>
-          <ChatItem type="1"/>
-          <ChatItem/>
+          <ChatItem onDetectionImg={handleSetBg} type="1"/>
         </div>
       </div>
       <div className='absolute bottom-0 left-0 w-full border-t color-white pt-5'>
