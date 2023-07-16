@@ -7,6 +7,7 @@ import { Toast } from 'antd-mobile';
 interface ChatItemProps {
     type?: string;
     onDetectionImg?: (url: string) => void;
+    message?: string;
 }
 
 function findKeywordsPositions(str: string, keywords: string[]): number[] {
@@ -33,7 +34,7 @@ const mock: string = '随着科技的飞速发展，人工智能（AI）成为�
 const mockArr = mock.split('');
 
 const ChatItem: React.FC<ChatItemProps> = (props) => {
-    const { type, onDetectionImg } = props;
+    const { type, onDetectionImg, message } = props;
     const [content, setContent] = useState('');
     
     // mock 数据
@@ -75,8 +76,8 @@ const ChatItem: React.FC<ChatItemProps> = (props) => {
                     : <div className="w-8 h-8 flex-shrink-0 leading-8 bg-red-600 text-center">LQ</div>
                 }
                 
-                <div className="ml-2">
-                    <div className="mb-2">写一篇文章 主题 AI 核心内容 AI 的应用场景，及对社会影响。关键词 人工智能，最好文章内有图片。</div>
+                <div className="ml-2 flex-1">
+                    <div className="mb-2">{ message }</div>
                     {
                         type && <>
                         <div className="mb-2">
