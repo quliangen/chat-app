@@ -24,8 +24,8 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-          cache: pnpm-cache
-      - run: pnpm install --frozen-lockfile
+          cache: pnpm
+      - run: pnpm install --no-frozen-lockfile
       - run: pnpm build
       - uses: actions/configure-pages@v2
       - uses: actions/upload-pages-artifact@v1
