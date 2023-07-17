@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    basePath: '/char',
+    basePath: '/chat-app',
     output: 'export',
 }
 
